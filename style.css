@@ -184,14 +184,25 @@ footer a:hover {
   color: #000;
 }
 
-/* RIDERS GRID - NOUVEAU */
+/* RIDERS TITLE */
+.riders-title {
+  text-align: center;
+  color: #b48dff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 8px #b48dff88;
+}
+
+/* RIDERS GRID */
 .riders-grid {
   display: flex;
   gap: 3rem;
   justify-content: center;
   flex-wrap: wrap;
   max-width: 1000px;
-  margin: 4rem auto;
+  margin: 4rem auto 2rem;
 }
 
 .rider-card {
