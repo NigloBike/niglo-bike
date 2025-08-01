@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <title>Actus – Niglo Bike</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Test minimal */
     body {
       background-color: #111;
       color: white;
@@ -13,12 +12,25 @@
       text-align: center;
       padding: 20px;
     }
+
+    /* Bouton de retour amélioré */
     header a {
+      display: inline-block;
+      font-size: 1.5rem;
+      font-weight: bold;
       color: #b48dff;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      border: 2px solid #b48dff;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
+
+    header a:hover {
+      background-color: #b48dff;
+      color: white;
+    }
+
     .btn {
       background-color: #b48dff;
       padding: 10px 20px;
@@ -30,9 +42,11 @@
       margin-top: 15px;
       transition: transform 0.3s ease;
     }
+
     .btn:hover {
       transform: scale(1.05);
     }
+
     .rider-section {
       margin-top: 30px;
       max-width: 600px;
@@ -40,12 +54,14 @@
       margin-right: auto;
       text-align: center;
     }
+
     .rider-img {
       max-width: 100%;
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(180, 141, 255, 0.3);
       transition: transform 0.4s ease;
     }
+
     .rider-img:hover {
       transform: scale(1.05);
     }
@@ -53,7 +69,7 @@
 </head>
 <body>
   <header class="fade-in">
-    <a href="index.html">← Accueil</a>
+    <a href="index.html">← Retour</a>
   </header>
 
   <section class="blog fade-in" style="animation-delay: 0.2s;">
