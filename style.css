@@ -242,22 +242,6 @@ footer a:hover {
   margin-bottom: 1rem;
 }
 
-/* Ajustement spécifique des images boutique */
-.product img {
-  max-width: 250px;  /* limite la largeur à 250px */
-  width: 100%;       /* responsive dans son container */
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  object-fit: contain;
-  box-shadow: 0 4px 12px rgba(180, 141, 255, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.product img:hover {
-  transform: scale(1.05);
-}
-
 /* Conteneur images boutique */
 .product .images {
   display: flex;
@@ -265,6 +249,25 @@ footer a:hover {
   gap: 1rem;
   flex-wrap: wrap;
   margin-bottom: 1.5rem;
+  max-width: 650px;  /* limite la largeur globale du bloc */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Images des produits boutique */
+.product .images img {
+  max-width: 300px;   /* taille proche des images rider */
+  width: 100%;        /* responsive */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(180, 141, 255, 0.3);
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.product .images img:hover {
+  transform: scale(1.05);
 }
 
 /* Responsive boutique */
@@ -290,9 +293,10 @@ footer a:hover {
   .product .images {
     flex-direction: column;
     align-items: center;
+    max-width: 90%;
   }
 
-  .product img {
+  .product .images img {
     max-width: 90%;
   }
 }
