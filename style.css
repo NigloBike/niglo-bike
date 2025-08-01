@@ -224,3 +224,56 @@ footer p {
     font-size: 2rem;
   }
 }
+
+/* SECTION RIDER */
+.rider-section {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #111;
+  border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(180, 141, 255, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  color: #ddd;
+}
+
+.rider-section img {
+  width: 280px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(180, 141, 255, 0.4);
+  flex-shrink: 0;
+}
+
+.rider-content h2 {
+  font-size: 1.8rem;
+  color: #b48dff;
+  margin-bottom: 0.8rem;
+}
+
+.rider-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  max-width: 480px;
+}
+
+.rider-content a.btn {
+  display: inline-block;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .rider-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .rider-section img {
+    width: 90vw;
+  }
+  .rider-content p {
+    max-width: 100%;
+  }
+}
