@@ -5,6 +5,52 @@
   <title>Boutique – Niglo Bike</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
+  <style>
+    /* Style rapide pour redimensionner les images */
+    .images {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .images img {
+      max-width: 250px;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(180, 141, 255, 0.3);
+      object-fit: contain;
+    }
+
+    section.product {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    #cart-button {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background-color: #b48dff;
+      border: none;
+      color: #000;
+      font-weight: bold;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(180, 141, 255, 0.4);
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+
+    #cart-button:hover {
+      background-color: #d6bbff;
+    }
+  </style>
 </head>
 <body>
   <header>
