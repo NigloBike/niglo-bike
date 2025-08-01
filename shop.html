@@ -4,11 +4,15 @@
   <meta charset="UTF-8" />
   <title>Boutique – Niglo Bike</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
 </head>
 <body>
   <header>
     <a href="index.html">← Retour</a>
   </header>
+
+  <!-- 🛒 Bouton Panier visible -->
+  <button id="cart-button">🛒 Panier (<span class="snipcart-items-count">0</span>)</button>
 
   <section class="product">
     <h1>Maillot VTT Niglo Bike</h1>
@@ -18,7 +22,7 @@
     </div>
     <p>Prix : 49,90 €</p>
     <p>Tailles : S, M, L, XL, 2XL</p>
-    <button class="snipcart-add-item"
+    <button class="snipcart-add-item btn"
       data-item-id="niglo-maillot-01"
       data-item-name="Maillot VTT Niglo Bike"
       data-item-price="49.90"
@@ -30,9 +34,18 @@
   </section>
 
   <footer>
+    <p>© Niglo Bike – Tous droits réservés</p>
     <div id="snipcart" data-api-key="YOUR_SNIPCART_API_KEY" hidden></div>
-    <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
-    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
   </footer>
+
+  <!-- JS Snipcart -->
+  <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+
+  <!-- 🎯 Script pour ouvrir le panier -->
+  <script>
+    document.getElementById('cart-button').addEventListener('click', () => {
+      Snipcart.api.theme.cart.open();
+    });
+  </script>
 </body>
 </html>
