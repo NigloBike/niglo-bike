@@ -1,103 +1,78 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <title>Boutique – Niglo Bike</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
-  <style>
-    /* Style rapide pour redimensionner les images */
-    .images {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 1.5rem;
-    }
+<!-- Lightbox overlay -->
+<div id="lightbox" style="display:none;">
+  <span id="lightbox-close" title="Fermer">&times;</span>
+  <img id="lightbox-img" src="" alt="Image agrandie" />
+</div>
 
-    .images img {
-      max-width: 250px;
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(180, 141, 255, 0.3);
-      object-fit: contain;
-      transition: transform 0.3s ease;
-    }
-    .images img:hover {
-      transform: scale(1.05);
-    }
+<style>
+  #lightbox {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1500;
+  }
+  #lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(180,141,255,0.8);
+  }
+  #lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    color: #b48dff;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1600;
+    transition: color 0.3s ease;
+  }
+  #lightbox-close:hover {
+    color: #d6bbff;
+  }
+</style>
 
-    section.product {
-      max-width: 600px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      text-align: center;
-    }
+<script>
+  // Sélection de toutes les images dans la galerie
+  const thumbnails = document.querySelectorAll('.images img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.getElementById('lightbox-close');
 
-    #cart-button {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background-color: #b48dff;
-      border: none;
-      color: #000;
-      font-weight: bold;
-      padding: 0.6rem 1.2rem;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(180, 141, 255, 0.4);
-      transition: background-color 0.3s ease;
-      z-index: 1000;
-    }
-
-    #cart-button:hover {
-      background-color: #d6bbff;
-    }
-  </style>
-</head>
-<body>
-  <header class="fade-in" style="animation-delay: 0.2s;">
-    <a href="index.html">← Retour</a>
-  </header>
-
-  <!-- 🛒 Bouton Panier visible -->
-  <button id="cart-button" class="fade-in" style="animation-delay: 0.4s;">
-    🛒 Panier (<span class="snipcart-items-count">0</span>)
-  </button>
-
-  <section class="product slide-in-left" style="animation-delay: 0.6s;">
-    <h1>Maillot VTT Niglo Bike</h1>
-    <div class="images">
-      <img src="images/IMG_7695.jpg" alt="Face du maillot" />
-      <img src="images/IMG_7696.jpg" alt="Dos du maillot" />
-    </div>
-    <p>Prix : 49,90 €</p>
-    <p>Tailles : S, M, L, XL, 2XL</p>
-    <button class="snipcart-add-item btn"
-      data-item-id="niglo-maillot-01"
-      data-item-name="Maillot VTT Niglo Bike"
-      data-item-price="49.90"
-      data-item-url="/shop.html"
-      data-item-description="Maillot technique pour VTT - disponible de S à 2XL"
-      data-item-image="images/IMG_7695.jpg">
-      Ajouter au panier
-    </button>
-  </section>
-
-  <footer class="fade-in" style="animation-delay: 0.8s;">
-    <p>© Niglo Bike – Tous droits réservés</p>
-    <div id="snipcart" data-api-key="YOUR_SNIPCART_API_KEY" hidden></div>
-  </footer>
-
-  <!-- JS Snipcart -->
-  <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
-
-  <!-- 🎯 Script pour ouvrir le panier -->
-  <script>
-    document.getElementById('cart-button').addEventListener('click', () => {
-      Snipcart.api.theme.cart.open();
+  thumbnails.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // bloque le scroll derrière
     });
-  </script>
-</body>
-</html>
+  });
+
+  // Fermer la lightbox en cliquant sur la croix
+  lightboxClose.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    document.body.style.overflow = '';
+  });
+
+  // Fermer la lightbox en cliquant en dehors de l'image
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Fermer la lightbox avec la touche Échap
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  });
+</script>
+
