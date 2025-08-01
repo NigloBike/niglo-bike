@@ -192,6 +192,7 @@ footer a:hover {
   background-color: #111;
   border-radius: 16px;
   box-shadow: 0 6px 30px rgba(180, 141, 255, 0.2);
+  /* On garde flex mais uniquement pour une section simple */
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -230,6 +231,30 @@ footer a:hover {
   margin-top: 1rem;
 }
 
+/* NOUVELLE CLASSE POUR LES 2 RIDERS COTE A COTE */
+.riders-duo {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #111;
+  border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(180, 141, 255, 0.2);
+
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.riders-duo .rider-section {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .images {
@@ -249,5 +274,8 @@ footer a:hover {
   }
   .rider-img {
     width: 90vw;
+  }
+  .riders-duo {
+    flex-direction: column;
   }
 }
