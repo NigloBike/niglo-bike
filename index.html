@@ -6,63 +6,140 @@
   <title>Niglo Bike</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Centrer le titre "Nos Riders" */
-    .riders-title-center {
-      text-align: center;
-      font-size: 2.2rem;
-      color: #b48dff;
-      margin-bottom: 1.5rem;
-      text-shadow: 0 0 10px rgba(180, 141, 255, 0.3);
+    /* Styles existants à garder */
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #1a1a1a;
     }
 
-    /* Centrer la grille et limiter la largeur */
+    .logo {
+      max-width: 150px;
+    }
+
+    nav a {
+      color: #b48dff;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #d6bbff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(to bottom, #1a1a1a, #111);
+      color: #b48dff;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #b48dff;
+      color: #000;
+      padding: 0.8rem 1.6rem;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-top: 1.5rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #d6bbff;
+    }
+
+    /* Riders Section */
+
+    .riders-section {
+      max-width: 900px;
+      margin: 3rem auto 5rem;
+      padding: 0 1rem;
+    }
+
+    .riders-title-center {
+      text-align: center;
+      font-size: 2.4rem;
+      color: #b48dff;
+      margin-bottom: 2.5rem;
+      text-shadow: 0 0 10px rgba(180, 141, 255, 0.4);
+    }
+
     .riders-grid {
       display: flex;
       justify-content: center;
       gap: 2rem;
       flex-wrap: wrap;
-      max-width: 700px;
-      margin: 0 auto;
     }
 
-    /* Taille uniforme des rider cards */
     .rider-card {
       background-color: #1e1e1e;
       border-radius: 12px;
       overflow: hidden;
       width: 300px;
-      text-align: center;
+      box-shadow: 0 4px 12px rgba(180, 141, 255, 0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
+    .rider-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(180, 141, 255, 0.4);
+    }
+
+    /* Images rider avec taille fixe pour uniformiser */
+
     .rider-card img {
       width: 100%;
-      height: auto;
+      height: 320px;      /* hauteur fixe identique */
+      object-fit: cover;  /* recadrage uniforme */
       display: block;
       border-radius: 12px 12px 0 0;
-      object-fit: cover;
     }
 
     .rider-content {
       padding: 1rem;
+      text-align: center;
     }
 
     .rider-content h2 {
       color: #b48dff;
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
     }
 
     .rider-content p {
-      color: #cccccc;
+      color: #ccc;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    /* Footer */
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #1a1a1a;
+      color: #ccc;
       font-size: 1rem;
     }
 
-    /* Hover effect */
-    .rider-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(180, 141, 255, 0.2);
+    footer a {
+      color: #b48dff;
+      text-decoration: none;
+      font-weight: bold;
     }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
   </style>
 </head>
 <body>
