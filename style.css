@@ -70,6 +70,7 @@ nav a:hover {
 .btn:hover {
   background-color: #d6bbff;
   box-shadow: 0 4px 15px rgba(214, 187, 255, 0.4);
+  animation: pulseAnim 0.6s infinite alternate;
 }
 
 /* Riders Title */
@@ -91,7 +92,7 @@ nav a:hover {
   padding: 2rem;
 }
 
-/* Rider Card */
+/* Rider Card - animé */
 .rider-card {
   background-color: #1e1e1e;
   border-radius: 12px;
@@ -99,27 +100,47 @@ nav a:hover {
   width: 300px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
 }
 
 .rider-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(180, 141, 255, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(180, 141, 255, 0.4);
 }
 
 .rider-card img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.rider-card:hover img {
+  transform: scale(1.05);
 }
 
 .rider-content {
   padding: 1rem;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.rider-card:hover .rider-content {
+  opacity: 1;
+  transform: translateY(-5px);
 }
 
 .rider-content h2 {
   color: #b48dff;
   font-size: 1.4rem;
   margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.rider-card:hover .rider-content h2 {
+  color: #d6bbff;
 }
 
 .rider-content p {
@@ -324,9 +345,6 @@ footer a:hover {
 }
 
 /* Animation sur les boutons au hover (pulse) */
-.btn:hover {
-  animation: pulseAnim 0.6s infinite alternate;
-}
 @keyframes pulseAnim {
   from {
     transform: scale(1);
@@ -363,17 +381,4 @@ header.loading::after {
   animation: loaderAnim 1.5s infinite;
 }
 
-@keyframes loaderAnim {
-  0% {
-    left: 0%;
-    width: 20%;
-  }
-  50% {
-    left: 50%;
-    width: 40%;
-  }
-  100% {
-    left: 100%;
-    width: 20%;
-  }
-}
+@keyframes
