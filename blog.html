@@ -28,6 +28,10 @@
       font-weight: bold;
       display: inline-block;
       margin-top: 15px;
+      transition: transform 0.3s ease;
+    }
+    .btn:hover {
+      transform: scale(1.05);
     }
     .rider-section {
       margin-top: 30px;
@@ -40,24 +44,28 @@
       max-width: 100%;
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(180, 141, 255, 0.3);
+      transition: transform 0.4s ease;
+    }
+    .rider-img:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
-  <header class="centered-header">
+  <header class="fade-in">
     <a href="index.html">← Accueil</a>
   </header>
 
-  <section class="blog">
+  <section class="blog fade-in" style="animation-delay: 0.2s;">
     <h1 class="blog-title">Actualités</h1>
 
-    <article class="blog-article">
+    <article class="blog-article slide-in-left" style="animation-delay: 0.4s;">
       <h2>Lancement de Niglo Bike !</h2>
       <p>Bienvenue à tous les riders ! On lance officiellement notre premier maillot. Roulez piquant !</p>
     </article>
 
     <!-- Section Rider Emilien Serpaggi -->
-    <section class="rider-section centered-rider">
+    <section class="rider-section slide-in-left" style="animation-delay: 0.6s;">
       <img src="images/portrait-emilien.png" alt="Émilien Serpaggi en action" class="rider-img" />
       <div class="rider-content">
         <h2>Émilien Serpaggi – Rider Niglo Bike</h2>
